@@ -24,9 +24,16 @@ document.querySelector('form').addEventListener('submit', e => {
                   </div>
                 </div>`;
       document.getElementById('list').innerHTML = lista;
+      getProfile(username);
+      console.log(repo);
     }))
-
-    getProfile(username);
+    .catch(error => {
+        if(error) {
+          lista += `<span class='user-not-found'>user not found</span>`;
+          document.getElementById('main').innerHTML = lista;
+          document.getElementById('list').innerHTML = '';
+        }
+    })
   }else {
     alert('search github user');
   }
