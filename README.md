@@ -12,17 +12,25 @@ Example of using api fetch consuming to api github.
  
  - [http-server](https://www.npmjs.com/package/http-server)
  
-    `http-server is a simple, zero-configuration command-line http server`
+**Running the project:**
 
-    - *Installation via npm:*
+clone repository
 
-          npm install http-server -g
-   
-    - *Installation via yarn:*
-  
-          yarn add http-server
+`git clone git@github.com:henriquenasc/github-fetch.git`
 
-Simple example using:
+enter the cloned directory
+
+`cd github-fetch`
+
+run http server
+ 
+`http-server`
+
+access in the browser
+
+`127.0.0.1:8080`
+
+**Simple example using:**
  - Pure css
  - Fetch Api
  - http-server
