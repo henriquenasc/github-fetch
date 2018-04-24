@@ -242,3 +242,13 @@ a {
     position: fixed;
     z-index: 9999;
 }
+
+.user-not-found {
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    font-size: 4em;
+    color: gray;
+    position: relative;
+    z-index: 9999;
+    margin: auto;
+    float: left;
+}
