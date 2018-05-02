@@ -37,13 +37,14 @@ class App {
     if (bio == null) bio = "";
 
     list = `
+    <div id='list'>
       <img src=${avatar_url}>
       <h2>${name}</h2>
-      <span>${bio}</span>
+      <p>${bio}</p>
       <br>
       <a href='${html_url}' target='_blank'>acessar</a>
-    `;
-    document.getElementById("list").innerHTML = list;
+    </div>`;
+    document.getElementById("container").innerHTML = list;
   }
 }
 
