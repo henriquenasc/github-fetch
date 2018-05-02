@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>GitHub Fetch</title>
+
+  <style>
+    #list a {
+      text-decoration: none;
+    }
+
+    #list a li {
+      list-style: none;
+      box-shadow: 1px 1px 1px gray;
+      padding: 10px;
+      width: 300px;
+    }
+
+    #list a li img {
+      width: 80px;
+      height: 80px;
+      border-radius: 4px;
+    }
+
+    #list a li span {
+      font-size: 1em;
+      color: #222;
+      position: relative;
+      left: 10px;
+      top: -55px;
+      font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+
+  <form>
+    <input type="text" name="user">
+    <button id="btn-submit" type="submit">search</button>
+  </form>
+
+  <div id="list">
+
+  </div>
+
+  <script src="bundle.js"></script>
+</body>
+
+</html>
