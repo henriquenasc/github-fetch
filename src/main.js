@@ -23,7 +23,10 @@ class App {
       const response = await api.get(`/users/${user}`);
       const { name, bio, avatar_url, html_url } = response.data;
 
-      this.render(name, bio, avatar_url, html_url);
+      this.renderUser(name, bio, avatar_url, html_url);
+
+      const repos = await api.get(`/users/${user}/repos`);
+      this.renderRepos(repos.data);
 
       this.user.value = "";
     } catch (err) {
@@ -31,7 +34,7 @@ class App {
     }
   }
 
-  render(name, bio, avatar_url, html_url) {
+  renderUser(name, bio, avatar_url, html_url) {
     let list = "";
 
     if (bio == null) bio = "";
@@ -45,6 +48,25 @@ class App {
       <a href='${html_url}' target='_blank'>acessar</a>
     </div>`;
     document.getElementById("container").innerHTML = list;
+  }
+
+  renderRepos(repos) {
+    let container_repos = "";
+
+    repos.map(repo => {
+      container_repos += `
+        <div class='repo'>
+          <img src='${repo.owner.avatar_url}' class='repo-image'>
+          <h3 class='repo-title'>${repo.name}</h3>
+          <p class='repo-description'>${repo.description}</p>
+          <a href='${repo.html_url}' class='repo-link'>
+            <p class='repo-full-name'>${repo.full_name}</p>
+          </a>
+        </div>
+      `;
+    });
+
+    document.getElementById("container").innerHTML += container_repos;
   }
 }
 
