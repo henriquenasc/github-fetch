@@ -56,14 +56,14 @@ class App {
     repos.map(repo => {
       container_repos += `
       <div class='repo'>
-        <a href='${repo.html_url}' class='repo-link'>
-          <img src='${repo.owner.avatar_url}' class='repo-image'>
+      <img src='${repo.owner.avatar_url}' class='repo-image'>
+      <a href='${repo.html_url}' class='repo-link'>
           <h3 class='repo-title'>${repo.name}</h3>
+      </a>
           <p class='repo-description'>${
             repo.description !== null ? repo.description : ""
           }</p>
           <p class='repo-full-name'>${repo.full_name}</p>
-        </a>
       </div>
       `;
     });
